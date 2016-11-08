@@ -14,11 +14,11 @@ try:
     mkvmerge_path = cfg.get('mkvtoolnix','path')
     mkvmerge_exec = os.path.join(mkvmerge_path , 'mkvmerge.exe')
 except BaseException:
-    print("Error: please config mkvtoolnix's path")
+    sys.stderr.write("Error: please config mkvtoolnix's path")
     sys.exit(2)
 else:
     if not os.path.isfile(mkvmerge_exec):
-        print("Error: please config mkvtoolnix's path")
+        sys.stderr.write("Error: please config mkvtoolnix's path")
         sys.exit(2)
 
 # 支持的文件类型列表
